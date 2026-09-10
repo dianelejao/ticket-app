@@ -1,0 +1,260 @@
+/*
+  Direction artistique : affiche de concert / marquee de cinema, nuit malgache.
+  - Fond nuit indigo profond, accent or "marquee", rose corail en signal secondaire (annulation/erreur).
+  - Titres : Bebas Neue (condense, esprit affiche) / Corps : Work Sans (lisible, neutre).
+  - Motif structurant : le "ticket-stub" (billet a souche) avec bordure perforee,
+    utilise pour les cartes d'evenement et les billets - pas de carte SaaS generique.
+*/
+
+:root {
+  --bg: #15122A;
+  --surface: #1F1B3D;
+  --surface-raised: #262052;
+  --border: #342C63;
+  --text: #F5F3FF;
+  --text-muted: #9C97C4;
+  --gold: #F2B705;
+  --gold-dim: #7A5F0A;
+  --coral: #FF6B6B;
+  --success: #4ADE80;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: contain;
+}
+
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--bg);
+}
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  margin: 0 0 8px;
+  line-height: 1.05;
+}
+h1 { font-size: 34px; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+p { margin: 0 0 8px; color: var(--text-muted); line-height: 1.5; }
+
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px 90px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+.topbar .brand {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius);
+  padding: 13px 20px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100%;
+}
+.btn-primary { background: var(--gold); color: #1C1600; }
+.btn-primary:disabled { background: var(--gold-dim); color: #4a3d10; cursor: not-allowed; }
+.btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.btn-danger { background: var(--coral); color: #2a0d0d; }
+.btn-sm { padding: 8px 14px; font-size: 13px; width: auto; }
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
+label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+
+/* --- Ticket stub : motif structurant de l'appli --- */
+.ticket-stub {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 16px;
+  position: relative;
+}
+.ticket-stub__body { padding: 14px 16px; }
+.ticket-stub__divider {
+  position: relative;
+  height: 0;
+  border-top: 2px dashed var(--border);
+  margin: 0 0;
+}
+.ticket-stub__divider::before,
+.ticket-stub__divider::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background: var(--bg);
+  border-radius: 50%;
+}
+.ticket-stub__divider::before { left: -10px; }
+.ticket-stub__divider::after { right: -10px; }
+.ticket-stub__stub {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ticket-stub__category {
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 0.03em;
+}
+.ticket-stub__price { font-weight: 700; }
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--surface-raised);
+  color: var(--text-muted);
+}
+.badge-gold { background: rgba(242,183,5,0.15); color: var(--gold); }
+.badge-success { background: rgba(74,222,128,0.15); color: var(--success); }
+.badge-coral { background: rgba(255,107,107,0.15); color: var(--coral); }
+
+.bottom-nav {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.bottom-nav a {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.bottom-nav a.active { color: var(--gold); }
+.bottom-nav .icon { font-size: 20px; display: block; margin-bottom: 2px; }
+
+.event-hero {
+  width: 100%;
+  height: 160px;
+  border-radius: var(--radius);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 12px;
+  position: relative;
+}
+.event-hero .cat-badge { position: absolute; top: 10px; left: 10px; }
+
+.center-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 22px; height: 22px;
+  border: 3px solid var(--border);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 20px auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.alert {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.alert-error { background: rgba(255,107,107,0.12); color: var(--coral); }
+.alert-success { background: rgba(74,222,128,0.12); color: var(--success); }
+
+.qr-frame {
+  background: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+.qr-frame img { width: 200px; height: 200px; }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.stat-card .value { font-family: var(--font-display); font-size: 28px; color: var(--gold); }
+.stat-card .label { font-size: 12px; color: var(--text-muted); }
+
+.qty-control { display: flex; align-items: center; gap: 12px; }
+.qty-control button {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--surface-raised);
+  color: var(--text); font-size: 16px; cursor: pointer;
+}

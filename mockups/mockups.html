@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Maquettes - Billeterie MG</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="app.css" />
+<style>
+  body { max-width: none; padding: 30px; background: #0D0B1A; }
+  #root { all: unset; }
+  .gallery { display: flex; flex-wrap: wrap; gap: 28px; }
+  .phone {
+    width: 320px; height: 640px; background: #15122A; border: 8px solid #000;
+    border-radius: 36px; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,.5);
+    display: flex; flex-direction: column;
+  }
+  .phone .app-main { padding: 12px 12px 70px; }
+  .phone-label { font-family: 'Work Sans', sans-serif; color: #F5F3FF; text-align: center; margin: 10px 0 4px; font-weight: 600; }
+  .col { display: flex; flex-direction: column; align-items: center; }
+  h1.page-title { color: #F2B705; text-align:center; font-family:'Bebas Neue'; font-size:40px; margin-bottom: 4px;}
+  p.page-sub { color:#9C97C4; text-align:center; margin-bottom: 30px; font-family:'Work Sans';}
+</style>
+</head>
+<body>
+  <h1 class="page-title">Billeterie MG — Maquettes des ecrans</h1>
+  <p class="page-sub">Apercu statique des principaux ecrans client et admin (memes styles CSS que l'application reelle)</p>
+  <div class="gallery">
+
+    <div class="col">
+      <div class="phone">
+        <div class="topbar"><span class="brand">Billeterie MG</span></div>
+        <div class="app-main" style="text-align:center; padding-top:30px;">
+          <h1 style="color:var(--gold)">Billeterie MG</h1>
+          <p>Concerts, cinéma et événements près de chez vous</p>
+          <label>Email</label><input placeholder="vous@exemple.mg" />
+          <label>Mot de passe</label><input placeholder="••••••••" />
+          <button class="btn btn-primary">Se connecter</button>
+        </div>
+      </div>
+      <div class="phone-label">1. Connexion</div>
+    </div>
+
+    <div class="col">
+      <div class="phone">
+        <div class="topbar"><span class="brand">Billeterie MG</span></div>
+        <div class="app-main">
+          <input placeholder="Rechercher un événement..." />
+          <div style="display:flex;gap:8px;margin-bottom:14px;">
+            <button class="btn btn-sm" style="background:var(--gold);color:#1C1600">Tous</button>
+            <button class="btn btn-sm" style="background:var(--surface)">Concerts</button>
+            <button class="btn btn-sm" style="background:var(--surface)">Cinema</button>
+          </div>
+          <div class="ticket-stub">
+            <div class="event-hero" style="height:110px;background-image:url(https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f);border-radius:10px 10px 0 0;margin:0;">
+              <span class="badge badge-gold cat-badge">Concert</span>
+            </div>
+            <div class="ticket-stub__body">
+              <h3>Kadao Live - Tournee Tana</h3>
+              <p>Palais des Sports · Antananarivo</p>
+              <p>Dim. 15 nov., 19:00</p>
+            </div>
+            <div class="ticket-stub__divider"></div>
+            <div class="ticket-stub__stub"><span class="ticket-stub__category">Des que</span><span class="ticket-stub__price">25 000 Ar</span></div>
+          </div>
+          <div class="ticket-stub">
+            <div class="event-hero" style="height:110px;background-image:url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba);border-radius:10px 10px 0 0;margin:0;">
+              <span class="badge badge-gold cat-badge">Cinema</span>
+            </div>
+            <div class="ticket-stub__body"><h3>Avatar 3 - Avant-premiere</h3><p>Cine Ritz · Antananarivo</p></div>
+          </div>
+        </div>
+        <nav class="bottom-nav">
+          <a class="active"><span class="icon">🎫</span>Evenements</a>
+          <a><span class="icon">🛒</span>Panier</a>
+          <a><span class="icon">🎟️</span>Mes billets</a>
+          <a><span class="icon">👤</span>Profil</a>
+        </nav>
+      </div>
+      <div class="phone-label">2. Liste des événements</div>
+    </div>
+
+    <div class="col">
+      <div class="phone">
+        <div class="topbar"><button class="btn btn-sm btn-outline">←</button><h3 style="margin:0">Kadao Live</h3><span style="width:24px"></span></div>
+        <div class="app-main">
+          <div class="event-hero" style="height:150px;background-image:url(https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f)"></div>
+          <h2>Kadao Live - Tournee Tana</h2>
+          <p>Palais des Sports Mahamasina · Antananarivo</p>
+          <p>Dimanche 15 novembre 2026, 19:00</p>
+          <h3 style="margin-top:16px;">Categories de billets</h3>
+          <div class="ticket-stub"><div class="ticket-stub__body" style="display:flex;justify-content:space-between;align-items:center;">
+            <div><div class="ticket-stub__category">Fosse</div><p style="margin:0">300 places restantes</p></div><strong>25 000 Ar</strong>
+          </div>
+          <div class="ticket-stub__divider"></div>
+          <div class="ticket-stub__stub"><span>Quantite</span><div class="qty-control"><button>-</button><span>2</span><button>+</button></div></div>
+          </div>
+          <button class="btn btn-primary">Ajouter au panier</button>
+        </div>
+      </div>
+      <div class="phone-label">3. Détail événement</div>
+    </div>
+
+    <div class="col">
+      <div class="phone">
+        <div class="topbar"><h3 style="margin:0">Mon panier</h3></div>
+        <div class="app-main">
+          <div class="ticket-stub">
+            <div class="ticket-stub__body"><h3>Kadao Live</h3><p>Fosse · 25 000 Ar</p></div>
+            <div class="ticket-stub__divider"></div>
+            <div class="ticket-stub__stub"><div class="qty-control"><button>-</button><span>2</span><button>+</button></div><button class="btn btn-sm btn-outline">Retirer</button></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin:16px 0;font-size:18px;"><strong>Total</strong><strong style="color:var(--gold)">50 000 Ar</strong></div>
+          <button class="btn btn-primary">Passer au paiement</button>
+        </div>
+        <nav class="bottom-nav">
+          <a><span class="icon">🎫</span>Evenements</a><a class="active"><span class="icon">🛒</span>Panier (2)</a>
+          <a><span class="icon">🎟️</span>Mes billets</a><a><span class="icon">👤</span>Profil</a>
+        </nav>
+      </div>
+      <div class="phone-label">4. Panier</div>
+    </div>
+
+    <div class="col">
+      <div class="phone">
+        <div class="topbar"><button class="btn btn-sm btn-outline">←</button><h3 style="margin:0">Paiement</h3><span style="width:24px"></span></div>
+        <div class="app-main">
+          <p>Paiement simulé à des fins de démonstration.</p>
+          <div style="display:flex;justify-content:space-between;margin:16px 0;font-size:18px;"><strong>Total a payer</strong><strong style="color:var(--gold)">50 000 Ar</strong></div>
+          <h3>Moyen de paiement</h3>
+          <label class="ticket-stub" style="display:flex;align-items:center;gap:10px;padding:12px 16px;"><input type="radio" checked style="width:auto;margin:0;" />MVola</label>
+          <label class="ticket-stub" style="display:flex;align-items:center;gap:10px;padding:12px 16px;"><input type="radio" style="width:auto;margin:0;" />Orange Money</label>
+          <label class="ticket-stub" style="display:flex;align-items:center;gap:10px;padding:12px 16px;"><input type="radio" style="width:auto;margin:0;" />Carte bancaire</label>
+          <button class="btn btn-primary">Payer 50 000 Ar</button>
+        </div>
+      </div>
+      <div class="phone-label">5. Paiement (simule)</div>
+    </div>
+
+    <div class="col">
+      <div class="phone">
+        <div class="topbar"><h3 style="margin:0">Mes billets</h3></div>
+        <div class="app-main">
+          <div class="ticket-stub">
+            <div class="ticket-stub__body">
+              <div style="display:flex;justify-content:space-between;"><h3>Kadao Live</h3><span class="badge badge-success">Valide</span></div>
+              <p>Palais des Sports · Antananarivo</p>
+              <p>Dim. 15 novembre, 19:00</p>
+              <div class="qr-frame"><div style="width:200px;height:200px;background:repeating-linear-gradient(45deg,#000,#000 6px,#fff 6px,#fff 12px)"></div></div>
+              <p style="text-align:center;font-size:12px;">TKT-8f2a1c9e</p>
+            </div>
+            <div class="ticket-stub__divider"></div>
+            <div class="ticket-stub__stub"><span class="ticket-stub__category">Fosse</span></div>
+          </div>
+        </div>
+        <nav class="bottom-nav">
+          <a><span class="icon">🎫</span>Evenements</a><a><span class="icon">🛒</span>Panier</a>
+          <a class="active"><span class="icon">🎟️</span>Mes billets</a><a><span class="icon">👤</span>Profil</a>
+        </nav>
+      </div>
+      <div class="phone-label">6. Mes billets (QR code)</div>
+    </div>
+
+    <div class="col">
+      <div class="phone">
+        <div class="topbar"><h3 style="margin:0">Tableau de bord</h3></div>
+        <div class="app-main">
+          <div class="stat-grid">
+            <div class="stat-card"><div class="value">870 000 Ar</div><div class="label">Chiffre d'affaires</div></div>
+            <div class="stat-card"><div class="value">42</div><div class="label">Reservations payees</div></div>
+            <div class="stat-card"><div class="value">96</div><div class="label">Billets vendus</div></div>
+            <div class="stat-card"><div class="value">31</div><div class="label">Entrees scannees</div></div>
+          </div>
+          <h3>Ventes par événement</h3>
+          <div class="ticket-stub">
+            <div class="ticket-stub__body"><h3>Kadao Live</h3><p>15 nov. 2026 · published</p><p style="color:var(--text)">60 / 380 billets vendus</p></div>
+            <div class="ticket-stub__divider"></div>
+            <div class="ticket-stub__stub"><span>Revenu</span><strong>750 000 Ar</strong></div>
+          </div>
+        </div>
+        <nav class="bottom-nav">
+          <a class="active"><span class="icon">📊</span>Tableau de bord</a>
+          <a><span class="icon">➕</span>Creer</a><a><span class="icon">📷</span>Scanner</a>
+        </nav>
+      </div>
+      <div class="phone-label">7. Tableau de bord admin</div>
+    </div>
+
+    <div class="col">
+      <div class="phone">
+        <div class="topbar"><h3 style="margin:0">Scanner les entrees</h3></div>
+        <div class="app-main">
+          <p>Placez le QR code du billet du client dans le cadre.</p>
+          <div style="width:100%;height:280px;border-radius:10px;background:#000;display:flex;align-items:center;justify-content:center;">
+            <div style="width:200px;height:200px;border:3px solid var(--gold);border-radius:12px;"></div>
+          </div>
+          <div class="alert alert-success" style="margin-top:16px;">
+            <strong>✅ Entree validee</strong>
+            <p style="margin-top:6px;">Rina Client — Fosse</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone-label">8. Scanner QR (admin)</div>
+    </div>
+
+  </div>
+</body>
+</html>

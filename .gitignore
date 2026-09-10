@@ -1,0 +1,14 @@
+node_modules/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Frontend production output
+frontend/dist/
+
+# Local logs and editor files
+npm-debug.log*
+.DS_Store
+.vscode/
