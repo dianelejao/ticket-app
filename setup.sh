@@ -74,7 +74,7 @@ npm run db:init
 echo ""
 echo "== Installation terminee =="
 echo "Comptes de demo :"
-echo "  Admin  : admin@ticketapp.mg / Admin123!"
+echo "  Admin  : admin@gmail.com / admin123"
 echo "  Client : client@ticketapp.mg / Client123!"
 echo ""
 echo "Pour lancer le serveur : cd backend && npm run dev"

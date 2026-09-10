@@ -34,5 +34,5 @@ Voir [`INSTALL_GUIDE.md`](./INSTALL_GUIDE.md) pour les instructions complètes
 
 | Role   | Email                  | Mot de passe |
 |--------|-------------------------|--------------|
-| Admin  | admin@ticketapp.mg      | Admin123!    |
+| Admin  | admin@gmail.com         | admin123     |
 | Client | client@ticketapp.mg     | Client123!   |

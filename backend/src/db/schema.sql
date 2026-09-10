@@ -95,5 +95,5 @@ CREATE INDEX idx_tickets_qr ON tickets(qr_code_value);
 CREATE INDEX idx_bookings_user ON bookings(user_id);
 CREATE INDEX idx_notifications_user ON notifications(user_id, is_read);
 
--- Compte admin par defaut (mot de passe: Admin123!, a changer)
+-- Compte admin par defaut (mot de passe: admin123, a changer)
 -- Le hash est genere par le script src/db/init.js au demarrage si la table users est vide.

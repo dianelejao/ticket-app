@@ -17,11 +17,11 @@ async function run() {
   await pool.query(schema);
 
   console.log('-> Insertion du compte admin de demo...');
-  const adminPasswordHash = await bcrypt.hash('Admin123!', 10);
+  const adminPasswordHash = await bcrypt.hash('admin123', 10);
   const adminRes = await pool.query(
     `INSERT INTO users (full_name, email, phone, password_hash, role)
      VALUES ($1, $2, $3, $4, 'admin') RETURNING id`,
-    ['Administrateur', 'admin@ticketapp.mg', '0340000000', adminPasswordHash]
+    ['Administrateur', 'admin@gmail.com', '0340000000', adminPasswordHash]
   );
   const adminId = adminRes.rows[0].id;
 
@@ -80,7 +80,7 @@ async function run() {
   }
 
   console.log('OK - Base initialisee.');
-  console.log('   Admin  : admin@ticketapp.mg / Admin123!');
+  console.log('   Admin  : admin@gmail.com / admin123');
   console.log('   Client : client@ticketapp.mg / Client123!');
   await pool.end();
 }
